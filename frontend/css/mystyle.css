@@ -1,0 +1,116 @@
+body {
+   padding: 1%;
+    padding-top: 0;
+}
+
+div#user_profile_bar,
+div#site
+{
+    background: #eeeeee url("mystyle_images/fabric_of_squares_gray.png");
+    width:100%;
+    padding: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #05aaa9;
+    -webkit-box-shadow: 0px 2px 5px #05aaa9;
+    -moz-box-shadow: 0px 2px 5px #05aaa9;
+    -o-box-shadow: 0px 2px 5px #05aaa9;
+}
+
+div#user_profile_bar
+{
+    border-radius: 0px 0px 5px 5px;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+
+header{
+    text-align:center;
+}
+
+.jumbotron{
+    width: 98%;
+    opacity: 0.8;
+    margin: 10px auto;
+
+    box-shadow: 0px 2px 5px #555;
+    -webkit-box-shadow: 0px 2px 5px #555;
+    -moz-box-shadow: 0px 2px 5px #555;
+    -o-box-shadow: 0px 2px 5px #555 ;
+}
+
+.theme-dropdown .dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+    margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+    width: auto;
+}
+
+
+#prices-table,
+#prices-table td,
+#prices-table th
+{
+    font-size: 14pt;
+    border-color: #777;
+}
+
+#delete_client_dialog h3,
+#login-form-table th,
+#prices-table th{
+    background-color: #204d74;
+    color: #e0e0e0;
+}
+
+#login-form-table{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.client-container{
+    float:left;
+    margin: 10px;
+    text-align:center;
+    padding: 2px;
+}
+
+.client-container:hover{
+
+    box-shadow: 0px 2px 5px #555;
+    -webkit-box-shadow: 0px 2px 5px #555;
+    -moz-box-shadow: 0px 2px 5px #555;
+    -o-box-shadow: 0px 2px 5px #555 ;
+}
+
+hr{
+    border-color: #0f0f0f;
+    border-style: dashed;
+}
+
+#delete_client_dialog{
+    width: 60%;
+    border: 2px solid gray;
+    margin: 20px auto;
+}
+
+#delete_client_dialog h3{
+    margin-top: 0px;
+}
+
+footer{
+    text-align: center;
+}

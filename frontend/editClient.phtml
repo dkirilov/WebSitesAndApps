@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <form method="post" enctype="multipart/form-data" >
+            <table style="width: 80%; margin: 20px auto;" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Име на клиента<strong style="color:red;">*</strong></th>
+                    <th>Настоящо лого</th>
+                    <th>Смени логото с</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" name="client_name" size="30" value="<?= $editted_client_data['client_name'] ?>" required/></td>
+                    <td>
+                        <?php if(!str_is_null_or_empty($editted_client_data['client_logo'])): ?>
+                            <img src="<?= $SETTINGS['files_dir_url'] ?>images/clients-logos/<?= $editted_client_data['client_logo'] ?>" width="100px" height="100px" />
+                        <?php else: ?>
+                            <img src="<?= $SETTINGS['files_dir_url'] ?>images/clients-logos/no-image.gif" width="100px" height="100px" />
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <input type="file" name="client_logo" /><br>
+                        <span>Максимална големина на файла: <?php echo human_size($SETTINGS['uploaded_image_file_max_size']); ?></span><br>
+                        <span>Позволени разширения: <?php foreach ($SETTINGS['allowed_image_extensions'] as $ext){echo "*.".$ext."; ";} ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center"><input type="submit" value="Запази промените" /></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

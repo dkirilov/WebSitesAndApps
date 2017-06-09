@@ -1,0 +1,27 @@
+<div class="container">
+<div class="row">
+    <form method="post" enctype="multipart/form-data" >
+        <table style="width: 70%; margin: 20px auto;" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Име на клиента<strong style="color:red;">*</strong></th>
+                    <th>Лого</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="client_name" size="30" required/></td>
+                    <td>
+                        <input type="file" name="client_logo" /><br>
+                        <span>Максимална големина на файла: <?php echo human_size($SETTINGS['uploaded_image_file_max_size']); ?></span><br>
+                        <span>Позволени разширения: <?php foreach ($SETTINGS['allowed_image_extensions'] as $ext){echo "*.".$ext."; ";} ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center"><input type="submit" value="Добави" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</div>

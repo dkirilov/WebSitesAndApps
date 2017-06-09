@@ -1,0 +1,82 @@
+<?php
+if(!isset($title) || strlen(trim($title)) == 0) {
+    $title = $SETTINGS['site_default_title'];
+}else {
+    $title = $SETTINGS['site_default_title'] . "::" . $title;
+}
+?>
+
+<!DOCTYPE html>
+<html lang='bg'>
+<head>
+    <meta charset="<?= $SETTINGS['charset'] ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?= $title ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<?= $SETTINGS['meta_description'] ?>" />
+    <meta name="author" content="<?= $SETTINGS['meta_author'] ?>" />
+    <meta name="robots" content="<?= $SETTINGS['meta_robots'] ?>" />
+    <meta name="msvalidate.01" content="C169E4AA76362ABC55BCBD299439F2A6" />
+
+    <link rel="shortcut icon" href="<?= $SETTINGS['files_dir_url'] ?>favicon.png">
+    <!-- Bootstrap -->
+    <link href="<?= $SETTINGS['frontend_files_url'] ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="<?= $SETTINGS['frontend_files_url'] ?>bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="<?= $SETTINGS['frontend_files_url'] ?>css/mystyle.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<script>
+    document.body.addEventListener('mouseover', function () {
+         var liElements = document.getElementsByClassName("active");
+         for(var i=0; i < liElements.length; i++){
+             liElements[i].className = "";
+         }
+
+         var activeObject = document.getElementById("<?= $page ?>-page");
+         activeObject.className = "active";
+    });
+</script>
+
+
+<div id="user_profile_bar" class="container">
+    <?php if($_SESSION['logged_in']): ?>
+     <span>Привет, <?= $_SESSION['current_user_name']; ?>!</span>
+       <span>
+        [<a href="http://<?= $SETTINGS['site_name'] ?>/logout">Излез</a>]
+        [<a href="http://<?= $SETTINGS['site_name'] ?>/editProfile">Настройки на профила</a>]
+        <?php if($_SESSION['is_admin']): ?>
+            [<a href="http://<?= $SETTINGS['site_name'] ?>/editSiteSettings">Настройки на сайта</a>]
+        <?php endif; ?>
+     </span>
+    <?php else: ?>
+      <span><a href="http://<?= $SETTINGS['site_name'] ?>/login">[Вход]</a></span>
+    <?php endif; ?>
+</div>
+
+<div id="site" class="container">
+
+<header>
+  <div class="row">
+       <img  src="<?= $SETTINGS['files_dir_url']; ?>images/troyan-cleaning-logo.png" class="header_logo" />
+  </div>
+</header>
+
+<?php require_once $SETTINGS['frontend_files_path']. "common/main_menu.phtml"; ?>
+
+
+
+

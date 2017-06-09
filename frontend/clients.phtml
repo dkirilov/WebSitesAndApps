@@ -1,0 +1,42 @@
+<div class="container">
+      <div class="row"><?= $_SESSION['message']; ?></div>
+
+   <h1 style="color: #4cae4c">Кои са нашите клиенти?</h1>
+   <br>
+   <br>
+    <?php if($_SESSION['is_admin']): ?>
+      <div style="text-align: center"><a href="clients/addClient" class="btn btn-lg btn-primary">Добави клиент</a></div>
+    <?php endif; ?>
+    <hr>
+   <div class='row'>
+    <?php
+
+        if(isset($clients_query)){
+           if($clients_query->rowCount() == 0){
+               echo "<p style='color: red; text-align: center;'><strong>Няма добавени клиенти.</strong></p>";
+           }
+
+           $current_client = 0;
+            while($client = $clients_query->fetch(PDO::FETCH_ASSOC)){
+               $logo_image = str_is_null_or_empty($client['client_logo'])?"no-image.gif":$client['client_logo'];
+
+               $admin_buttons ='';
+               if($_SESSION['is_admin']) {
+                  $admin_buttons = "<p>
+                                  <a href='clients/editClient?id={$client['id']}' title='Редактирай данните на този клиент'>Ред.</a> | 
+                                  <a href='clients/deleteClient?id={$client['id']}' title='Изтрий този клиент'>Изтр.</a>
+                                 </p>";
+               }
+
+               echo "<span class='client-container'>                     
+                         $admin_buttons
+                         <p><img src='{$SETTINGS['files_dir_url']}images/clients-logos/{$logo_image}' width='100px' height='100px'/></p>
+                         <em>{$client['client_name']}</em>
+                     </span>";
+            }
+        }
+
+    ?>
+   </div>
+   <hr>
+</div>

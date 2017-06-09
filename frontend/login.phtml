@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="msg-area"><?= $errMSG ?></div>
+
+    <form method="post">
+        <div class="row">
+            <table id="login-form-table" class="table table-bordered">
+               <thead>
+                   <tr>
+                       <th colspan="2" style="text-align: center">Вход</th>
+                   </tr>
+               </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="username-field">Потребителско име </label>
+                        </td>
+                        <td>
+                            <input type="text" id="username-field" name="username" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password-field">Парола </label>
+                        </td>
+                        <td>
+                            <input type="password" id="password-field" name="password" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" colspan="2">
+                            <input type="submit"  name="login_submit" class="btn btn-lg btn-primary"  value="Влез" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

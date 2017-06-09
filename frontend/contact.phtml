@@ -1,0 +1,35 @@
+<div class="container">
+
+    <h1 style="color: #4cae4c">Как може да се свържете с нас?</h1>
+    <br>
+    <br>
+    <div id="contacts-container">
+        <p>
+           <strong>Телефон 1:</strong> 0893515181 <br>
+            <strong>Телефон 2:</strong> 0887646379 <br>
+           <strong>Facebook:</strong> <a href="https://www.facebook.com/Troyan-Cleaning-231286573983973" target="_blank">Troyan Cleaning</a> <br>
+           <strong>E-mail:</strong> zwetomir@abv.bg <br>
+           <strong>Адрес:</strong> гр.Троян, ул. Любен Каравелов &numero;3A <br>
+        </p>
+        <h3>Карта</h3>
+        <div id="map"></div>
+        <br>
+    </div>
+</div>
+
+<script>
+    function initMap() { 
+        var uluru = {lat: 42.8922454, lng: 24.7115603};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJQfXmHpDwmCOTeAYIMlQwRhnoP4xCwc&callback=initMap&language=bg">
+</script>
